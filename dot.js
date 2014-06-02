@@ -147,7 +147,7 @@ dot = (function() {
       for (var i=start;i<=end;i+=step) {
         var p = f(i);
         this.dot(p.y, p.x);
-      }
+      } return this;
     },
 
     param2: function(f, a, b, c) {
@@ -159,7 +159,7 @@ dot = (function() {
         var q = this.coords2(p.x, p.y);
         console.log(q.y, q.x);
         this.dot(q.y, q.x);
-      }
+      } return this;
     },
 
     parl: function(f, a, b, c) {
@@ -171,7 +171,7 @@ dot = (function() {
         var p = f(i);
         this.line(prev.x,prev.y,p.x,p.y);
         prev.x=p.x; prev.y=p.y;
-      }
+      } return this;
     },
 
     parl2: function(f, a, b, c) {
@@ -185,7 +185,7 @@ dot = (function() {
         var q = this.coords2(p.x, p.y);
         this.line(prev.x,prev.y,q.x,q.y);
         prev.x=q.x; prev.y=q.y;
-      }
+      } return this;
     },
   };
 })();
