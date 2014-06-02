@@ -161,5 +161,31 @@ dot = (function() {
         this.dot(q.y, q.x);
       }
     },
+
+    parl: function(f, a, b, c) {
+      var start = (b==undefined)?0:a;
+      var end   = (b==undefined)?a:b;
+      var step  = (c==undefined)?1:c;
+      var prev  = f(start);
+      for (var i=start+step;i<=end;i+=step) {
+        var p = f(i);
+        this.line(prev.x,prev.y,p.x,p.y);
+        prev.x=p.x; prev.y=p.y;
+      }
+    },
+
+    parl2: function(f, a, b, c) {
+      var start = (b==undefined)?0:a;
+      var end   = (b==undefined)?a:b;
+      var step  = (c==undefined)?1:c;
+      var qrd   = f(start)
+      var prev  = this.coords2(qrd.x,qrd.y);
+      for (var i=start+step;i<=end;i+=step) {
+        var p = f(i);
+        var q = this.coords2(p.x, p.y);
+        this.line(prev.x,prev.y,q.x,q.y);
+        prev.x=q.x; prev.y=q.y;
+      }
+    },
   };
 })();

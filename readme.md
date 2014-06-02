@@ -48,6 +48,10 @@ Draws a circle centered at `(x, y)` with radius `r` using the midpoint circle al
 
 Draws the parametric function `f(t)` across the given interval. Output is expected to be an object: `{x: <x>, y: <y>}`.
 
+### `dot.parl(f, [start,] end, [step]);`
+
+The same as `dot.param`, except it draws lines between the points instead of just the points.
+
 ### Mode "2"
 
 All drawing functions come with a "2" variant ("line2", "circle2", etc.) which expects input as if the corners of the screen were (-1,1) (1,1) (1,-1) (-1,-1).
