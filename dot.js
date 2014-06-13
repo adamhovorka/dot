@@ -34,6 +34,11 @@ dot = (function() {
   }
 
   return {
+    init: function(id) {
+      this.setCA(document.getElementById(id));
+      return this;
+    },
+
     setCA: function(ca) {
       this._ca = ca;
       this.setCX(ca.getContext("2d"));

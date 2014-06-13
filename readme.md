@@ -12,6 +12,10 @@ It turns out that there's no easy way to alias Canvas primitives (something I wo
 
 ## Innards
 
+### `dot.init(id);`
+
+Automatically selects the canvas by the id given.
+
 ### `dot.setCA(canvas);`
 
 You must first initialize dot by passing it a canvas object for it to work on.
