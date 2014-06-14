@@ -1,5 +1,5 @@
-Dot - v2.0.0
-============
+Dot ![v2.0.0](http://img.shields.io/badge/version-2.0.0-brightgreen.svg)
+=============
 
 So it turns out that there's no easy way to alias Canvas primitives (What? Maybe I like it!) so I made a few simple graphic primitives of my own. It's a lot more fun than you'd think.
 
