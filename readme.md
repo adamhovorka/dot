@@ -1,61 +1,38 @@
-Dot
-===
+Dot - v2.0.0
+============
 
-It turns out that there's no easy way to alias Canvas primitives (something I would want to do for stylistic reasons) so I made a few simple ones of my own.
+So it turns out that there's no easy way to alias Canvas primitives (What? Maybe I like it!) so I made a few simple graphic primitives of my own. It's a lot more fun than you'd think.
 
-## Example
+## Example Code
 
-    dot.setCA(document.getElementById("myCanvas"))
+    var d = new Dot("myCanvas")
       .setColor("#000")
       .line(0,0,100,100)
       .circle(50,50,50);
 
-## Innards
+A more complete example can be seen in `demo.html`.
 
-### `dot.init(id);`
+## Usage
 
-Automatically selects the canvas by the id given.
+An instance is created with `var d = new Dot();` which can be optionally passed the ID of a canvas. If an ID isn't passed on instantiation, a canvas object must later be passed into `d.setCA(canvas)`.
 
-### `dot.setCA(canvas);`
+### Instance Methods
 
-You must first initialize dot by passing it a canvas object for it to work on.
+Most instance methods are chainable, the exceptions being `getColor` and `coords2`.
 
-### `dot.setCX(context);`
+- Canvas selection: `d.setCA(canvas)`
+- Color management: `d.setColor(hex)`, `d.getColor()`
+- Magnification: `d.setX(magnification level)`
+- Coordinate conversion: `d.coords2(x, y)`
+- Screen cleaning: `d.clear()`
+- Points: `d.putPX(y, x)`, `d.dot(y, x)`
+- Lines: `d.line(x0, y0, x1, y1)`
+- Rectangles: `d.rect(x0, y0, x1, y1)`
+- Filled rectangles: `d.rectf(x0, y0, x1, y1)`
+- Circles: `d.circle(x, y, r)`
+- Parametric equations: `d.param(f, [start,] end, [increment])`
+- Interpolated parametric equations: `d.parl(f, [start,] end, [increment])`
 
-This is handled internally. You don't actually need to touch this.
+The functions passed as parametric equations are given one argument `t` and are expected to pass back an object with an `x` and a `y` property.
 
-### `dot.setColor(hex);`
-
-Input must be a hex string.
-
-### `dot.getColor();`
-
-Returns current color as a hex string.
-
-### `dot.clear();`
-
-Erases the canvas.
-
-### `dot.dot(y, x);`
-
-Sets the pixel at `(x, y)` to the stored color. The inputs are reversed because that's how screen coordinates are layed out.
-
-### `dot.line(x1, y1, x2, y2);`
-
-Draws a line from point 1 to point 2 using Bresenham's line algorithm.
-
-### `dot.circle(x, y, r);`
-
-Draws a circle centered at `(x, y)` with radius `r` using the midpoint circle algorithm.
-
-### `dot.param(f, [start,] end, [step]);`
-
-Draws the parametric function `f(t)` across the given interval. Output is expected to be an object: `{x: <x>, y: <y>}`.
-
-### `dot.parl(f, [start,] end, [step]);`
-
-The same as `dot.param`, except it draws lines between the points instead of just the points.
-
-### Mode "2"
-
-All drawing functions come with a "2" variant ("line2", "circle2", etc.) which expects input as if the corners of the screen were (-1,1) (1,1) (1,-1) (-1,-1).
+All drawing methods also come with a "2" version (e.g. `line2`, `circle2`) which treates coordinates as if the corners of the screen were (1,1) and (-1,-1).

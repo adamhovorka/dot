@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dot</title>
+    <style>
+      html { display: table; height: 100%; width: 100%; }
+      body { display: table-cell; vertical-align: middle; text-align: center; }
+      canvas { box-shadow: 0 0 8px #888; }
+    </style>
+    <script src="dot.min.js"></script>
+    <script>window.onload = function() {
+      var d = new Dot("out").setColor("#000");
+
+      d//.setX(2)
+       .setColor("#f00").circle2(0,0,0.9)
+       .setColor("#0c0").rect2(0.5,0.5,-0.5,-0.5)
+       .setColor("#00f").rectf2(0.15,0.15,0.35,0.35)
+       .setColor("#000").parl2(function(i) {
+         return { x: i/2, y: -Math.sin(i*Math.PI)/4 - 0.25 };
+       }, -1, 1, 0.1);
+
+      d.setX(3).setColor("#f80")
+       .line2(-0.35,0.35,-0.35,0.15)
+       .line2(-0.35,0.35,-0.30,0.35)
+       .line2(-0.35,0.15,-0.30,0.15)
+       .line2(-0.30,0.35,-0.25,0.25)
+       .line2(-0.30,0.15,-0.25,0.25)
+       .rect2(-0.22,0.15,-0.15,0.25)
+       .line2(-0.10,0.15,-0.10,0.35)
+       .line2(-0.12,0.25,-0.08,0.25);
+    };</script>
+  </head>
+  <body>
+    <canvas id="out" height=500 width=500>Oops. You need a newer browser.</canvas>
+  </body>
+</html>
