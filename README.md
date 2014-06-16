@@ -38,7 +38,7 @@ The functions passed as parametric equations are given one argument `t` and are 
 
 All drawing methods also come with a "2" version (e.g. `line2`, `circle2`) which treates coordinates as if the corners of the screen were (1,1) and (-1,-1).
 
-## Change Log
+## Changelog
 
 - 2.1.0: Added size query API
 - 2.0.0: Major API refactoring
