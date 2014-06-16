@@ -22,6 +22,7 @@ Most instance methods are chainable, the exceptions being `getColor` and `coords
 
 - Canvas selection: `d.setCA(canvas)`
 - Color management: `d.setColor(hex)`, `d.getColor()`
+- Size queries: `d.height()`, `d.width()`, `d.size()`
 - Magnification: `d.setX(magnification level)`
 - Coordinate conversion: `d.coords2(x, y)`
 - Screen cleaning: `d.clear()`
@@ -36,3 +37,8 @@ Most instance methods are chainable, the exceptions being `getColor` and `coords
 The functions passed as parametric equations are given one argument `t` and are expected to pass back an object with an `x` and a `y` property.
 
 All drawing methods also come with a "2" version (e.g. `line2`, `circle2`) which treates coordinates as if the corners of the screen were (1,1) and (-1,-1).
+
+## Change Log
+
+- 2.1.0: Added size query API
+- 2.0.0: Major API refactoring

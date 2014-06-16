@@ -1,5 +1,5 @@
 /*
-**  dot.js - v2.0.0
+**  dot.js - v2.1.0
 **
 **  A pixel-perfect canvas primitives library
 **  [*] 'Cause I can
@@ -65,6 +65,10 @@ Dot = (function() {
       var c = this._pixel.data;
       return rgbToHex(c[0], c[1], c[2]);
     }; // }}}
+    // {{{ Size queries:                     height, width, size
+    this.height = function() { return this._ca.height; };
+    this.width  = function() { return this._ca.width;  };
+    this.size = function() { return { h: this.height(), w: this.width() }; }; // }}}
     // {{{ Magnification:                    setX
     this.setX = function(x) {
       this._x = Math.round(x);
