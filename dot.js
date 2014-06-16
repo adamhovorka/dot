@@ -1,5 +1,5 @@
 /*
-**  dot.js - v2.1.0
+**  dot.js - v2.1.1
 **
 **  A pixel-perfect canvas primitives library
 **  [*] 'Cause I can
@@ -152,9 +152,21 @@ Dot = (function() {
     }; // }}}
     // {{{ Filled rectangles:                rectf
     this.rectf = function(x0, y0, x1, y1) {
-      if (y0>y1) { var a=y0; y0=y1; y1=a; }
-      for (var i=y0;i<=y1;i++) {
-        this.line(x0,i,x1,i); }
+      //if (y0>y1) { var a=y0; y0=y1; y1=a; }
+      //for (var i=y0;i<=y1;i++) {
+        //this.line(x0,i,x1,i); }
+
+      if (this._x != 1) {
+        x0 = x0 * this._x;
+        y0 = y0 * this._x;
+        x1 = x1 * this._x;
+        y1 = y1 * this._x;
+      }
+
+      this._cx.beginPath();
+      this._cx.rect(x0, y0, (x1-x0)+1, (y1-y0)+1);
+      this._cx.fillStyle = this.getColor();
+      this._cx.fill();
       return this;
     };
 
