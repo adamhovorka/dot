@@ -1,5 +1,5 @@
 /*
-**  dot.js - v2.1.1
+**  dot.js - v2.1.2
 **
 **  A pixel-perfect canvas primitives library
 **  [*] 'Cause I can
@@ -164,7 +164,7 @@ Dot = (function() {
       }
 
       this._cx.beginPath();
-      this._cx.rect(x0, y0, (x1-x0)+1, (y1-y0)+1);
+      this._cx.rect(x0, y0, (x1-x0)+this._x, (y1-y0)+this._x);
       this._cx.fillStyle = this.getColor();
       this._cx.fill();
       return this;

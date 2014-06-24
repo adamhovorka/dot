@@ -1,4 +1,4 @@
-Dot ![v2.1.1](http://img.shields.io/badge/version-2.1.1-brightgreen.svg)
+Dot ![v2.1.2](http://img.shields.io/badge/version-2.1.2-brightgreen.svg)
 =============
 
 So it turns out that there's no easy way to alias Canvas primitives (What? Maybe I like it!) so I made a few simple graphic primitives of my own. It's a lot more fun than you'd think.
@@ -40,6 +40,7 @@ All drawing methods also come with a "2" version (e.g. `line2`, `circle2`) which
 
 ## Changelog
 
+- 2.1.2: That's what I get... Fixed rectf size calculation while magnified
 - 2.1.1: ~6x rectf speed improvement by caving and using built-in rectangles (still pixel-perfect though...)
 - 2.1.0: Added size query API
 - 2.0.0: Major API refactoring
